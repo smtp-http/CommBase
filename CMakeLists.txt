@@ -19,8 +19,9 @@ AUX_SOURCE_DIRECTORY(. DIR_SRCS)
 include_directories(src)
 include_directories(include)
 add_subdirectory(src)
+add_subdirectory(test)
 
 LINK_DIRECTORIES(${PROJECT_SOURCE_DIR}/lib)
 
-ADD_EXECUTABLE(commbase ${DIR_SRCS})
+ADD_EXECUTABLE(commb ${DIR_SRCS})
 TARGET_LINK_LIBRARIES( commbase pthread event)

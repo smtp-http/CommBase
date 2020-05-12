@@ -3,6 +3,7 @@
 #include <list>
 #include <iostream>
 #include <algorithm>
+#include <unistd.h>
 #include "connection.h"
 #include "eventlooper.h"
 
@@ -105,9 +106,10 @@ protected:
 		cout << "OnData" << endl;
 		string s(buf, length);
 		cout << "recv: " << s << endl;
+		sleep(1);
+		conn->Send(buf, length);
 		
-		//conn->Send(buf, length);
-		EventLooper::GetInstance().StopEventLoop(5000);
+		//EventLooper::GetInstance().StopEventLoop(5000);
 	}
 
 	virtual void OnWrite(Connection *conn){

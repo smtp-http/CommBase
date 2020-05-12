@@ -13,7 +13,8 @@ MESSAGE(STATUS "src_list:" ${SRC_LIST_CPP} ${SRC_LIST_C})
 
 SET(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/build/lib)
 
-ADD_LIBRARY(commbase SHARED ${SRC_LIST_CPP} ${SRC_LIST_C})
+#ADD_LIBRARY(commbase SHARED ${SRC_LIST_CPP} ${SRC_LIST_C})
+ADD_LIBRARY(ucom SHARED ${SRC_LIST_CPP} ${SRC_LIST_C})
 
 AUX_SOURCE_DIRECTORY(. DIR_SRCS)
 include_directories(src)
@@ -24,4 +25,4 @@ add_subdirectory(test)
 LINK_DIRECTORIES(${PROJECT_SOURCE_DIR}/lib)
 
 ADD_EXECUTABLE(commb ${DIR_SRCS})
-TARGET_LINK_LIBRARIES( commbase pthread event)
+TARGET_LINK_LIBRARIES(commb ucom pthread event)

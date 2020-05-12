@@ -134,8 +134,8 @@ listener_cb(
 	bufferevent_enable(bev, EV_READ|EV_WRITE|EV_ET);
 }
 
-int
-main(void) {
+
+int main(void) {
 	struct event_base* base = event_base_new();
 
 	struct sockaddr saddr;
